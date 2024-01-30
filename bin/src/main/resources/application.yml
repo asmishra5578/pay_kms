@@ -1,0 +1,13 @@
+idealSessionTimeOut: 10
+otpExpiryTime: 50
+otpCount: 50
+
+superAdminConfig:
+  email: test@test.co.in
+  phoneNo: 1999999999
+  companyName: testCompany
+  address1: address1
+  address2: address2
+  address3: address3
+  country: India
+  pincode: 110011

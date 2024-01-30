@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form name="errorForn" method="post" id="redirectForm" >
+		<p>exception Page....</p>
+		
+		<input name="ErrorType" th:value="${erroDetails.errorType}" /> 
+		<input name="ErrorMessage" th:value="${erroDetails.errorMessage}" /> 
+		<input name="ExceptionDetails" th:value="${erroDetails.exceptionDetails}" /> 
+		<input name="AdditionalDetails" th:value="${erroDetails.additionalDetails}" /> 
+	</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Payment Page Encryption</title>
+</head>
+<!-- <body onload="document.frm1.submit()">  -->
+<body>
+	<form th:action="https://test.cashfree.com/billpay/checkout/post/submit" name="frm1" method="post" id="redirectForm" >
+		<p>Please wait.......</p>
+		<input type="hidden" name="signature" th:value="${signature}" /> 
+		<input type="hidden" name="orderNote" th:value="${custDetails.orderNote}" />
+		<input type="hidden" name="orderCurrency" th:value="${custDetails.orderCurrency}" /> 
+		<input type="hidden" name="customerName" th:value="${custDetails.customerName}" /> 
+		<input type="hidden" name="customerEmail" th:value="${custDetails.customerEmail}" /> 
+		<input type="hidden" name="customerPhone" th:value="${custDetails.customerPhone}" /> 
+		<input type="hidden" name="orderAmount" th:value="${custDetails.orderAmount}" />
+		<input type="hidden" name="notifyUrl" th:value="${notifyUrl}" /> 
+		<input type="hidden" name="returnUrl" th:value="${returnUrl}" /> 
+		<input type="hidden" name="appId" th:value="${appId}" /> 
+		<input type="hidden" name="orderId" th:value="${custDetails.orderId}" /> 
+		<input name="paymentOption" th:value="${custDetails.paymentOption}" /> 
+		<input name="upiMode" th:value="${custDetails.upiMode}" />
+		
+	</form>
+	<script type="text/javascript"> document.getElementById("redirectForm").submit(); </script>
+</body>
+</html>

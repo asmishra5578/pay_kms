@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Payment Page Encryption</title>
+</head>
+<!-- <body onload="document.frm1.submit()">  -->
+<body>
+	<form th:action="${returnUrl}" name="frm1" method="post" id="redirectForm" >
+		<p>Please wait.......</p>				
+		<input type ="hidden" name="orderAmount" th:value="${status}" />				
+		<input type ="hidden" name="paymentOption" th:value="${paymentOption}" /> 
+		<input type ="hidden" name="MerchantorderId" th:value="${MerchantorderId}" /> 
+		<input type ="hidden" name="orderAmount" th:value="${orderAmount}" /> 
+		<input type ="hidden" name="VendorOrderId" th:value="${VendorOrderId}" /> 
+		<input type ="hidden" name="status" th:value="${status}" /> 
+		<input type ="hidden" name="txtDate" th:value="${txtDate}" /> 
+		<input type ="hidden" name="signature" th:value="${signature}" /> 
+		
+	</form>
+	<script type="text/javascript"> document.getElementById("redirectForm").submit(); </script>
+</body>
+</html>

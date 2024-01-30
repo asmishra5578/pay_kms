@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <!-- Send debug messages to System.out -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level  %class{36}.%M %L  - %m%n</pattern>
+        </encoder>
+    </appender>
+    <property name="HOME_LOG" value="logs/PGateway_kms.log"/>
+   	<!--<property name="HOME_LOG" value="/home/ubuntu/logs/PGateway.log"/>-->
+    <appender name="APPLICATION" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${HOME_LOG}</file>
+        <append>true</append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level  %class{36}.%M %L  - %m%n</Pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>logs/archived/PGateway_kms.%d{yyyyMMdd}.%i.log.zip</fileNamePattern>
+            <!--<fileNamePattern>/home/ubuntu/logs/archived/PGateway.%d{yyyyMMdd}.%i.log.gz</fileNamePattern>-->
+            <maxFileSize>10MB</maxFileSize>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>90</maxHistory>
+            <totalSizeCap>50GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="com.asktech.pgateway" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="com.asktech.pgateway" level="ERROR" additivity="false">
+        <appender-ref ref="APPLICATION" />
+    </logger>
+    <logger name="com.asktech.pgateway" level="DEBUG" additivity="false">
+        <appender-ref ref="APPLICATION"/>
+    </logger>
+
+    <!-- By default, the level of the root level is set to DEBUG -->
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+    <root level="ERROR">
+        <appender-ref ref="STDOUT" />
+    </root>
+    <root level="WARN">
+        <appender-ref ref="APPLICATION"/>
+    </root>
+    <root level="INFO">
+        <appender-ref ref="APPLICATION"/>
+    </root>
+</configuration>

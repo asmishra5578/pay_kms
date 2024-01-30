@@ -1,0 +1,77 @@
+idealSessionTimeOut: 10
+otpExpiryTime: 2
+otpCount: 5
+failureLogin: 3
+resendEmailCounter: 10
+resendSmsCounter: 10
+sessionExpiryTime: 15
+
+superAdminConfig:
+  email: super@EazyPaymentz.com
+  phoneNo: 1999999999
+  companyName: testCompany
+  address1: address1
+  address2: address2
+  address3: address3
+  country: India
+  pincode: 110011
+  
+smsSenderId: ANLYTQ
+
+
+apiEndPoint: http://payment.paytoday.in/pg
+apiCustomerNotifyUrl: http://payment.paytoday.in/pg/paymentNotify
+apiCustomerReturnUrl: http://payment.paytoday.in/pg/paymentNotify
+# apiEndPoint: https://development.eazypaymentz.com/pg
+# apiCustomerNotifyUrl: https://development.eazypaymentz.com/pg/paymentNotify
+# apiCustomerReturnUrl: https://development.eazypaymentz.com/pg/paymentNotify
+
+apiCustomerExclude: WORDPRESS,MOBILE,PERMALINK
+
+apiPayoutEndPoint:
+   payoutUrl: http://internalpayout.grezpay.com/payout/merchant/
+   payoutBaseUrl: http://internalpayout.grezpay.com/payout
+
+payTmCredentials:
+  nodel:
+    secretId: tRZxpNG_Pq24rVfDgeFndSADQxXP96mvQD2ti6k7CGY=
+    partnerId: NODAL_API_SUITE_ANA_000264
+  van:
+    secretId: GIj7GvEySFRhSfWkNvwY6abWkqRXz5GICBHkJenVSGI=
+    partnerId: VAN_ANA_000268
+
+
+pgEndPoints:
+  setuPaymentStatus: https://prod.setu.co/api/payment-links/
+  cashfreePaymentStatus:  https://api.cashfree.com/api/v1/order/info/status
+  freeChargePaymentStatus: https://checkout.freecharge.in/api/v1/co/transaction/status
+  zavionPaymentStatus: https://pay.zavion.in/pgui/services/paymentServices/StatusApi?APP_ID=<appId>&ORDER_ID=<orderId>
+  paytmStatusLink: https://securegw.paytm.in/v3/order/status
+  easeBuzzPaymentStatus: https://dashboard.easebuzz.in/transaction/v1/retrieve
+  onePayPaymentStatus: https://onepaypgtest.in/onepayVAS/getTxnDetails
+  grezpayStatusAPI: https://secure.grezpay.com/pgui/services/paymentServices/StatusApi
+  asanpayStatusAPI: https://pg.asanpay.co.in/v1/services/paymentServices/StatusApi
+  getepayStatusAPI: https://pay.getepay.in/getepayComponent/transactionStatus
+  letzPayPaymentStatus: https://www.letzpay.com/pgws/transact
+  paygstatusapi: https://paygapi.payg.in/payment/api/order/Detail
+  nsdlStatusEndPoint: https://nsdlpb.insolutionsglobal.com/ISGPayNG/v2/saleStatus
+  sabPaisaStatusAPI: https://txnenquiry.sabpaisa.in/SPTxtnEnquiry/getTxnStatusByClientxnId
+
+payoutmode: PRODUCTION
+googleCaptcha:
+  projectID: cryptic-form-337412
+  recaptchaSiteKey: 6LdUSfgdAAAAALVC-3OR8_zsxdhSJVqiQSC1w_jA
+  recaptchaAction: homepage
+
+getepay:
+  publicKeyPath: /home/ubuntu/cert/getepay-payout.cer
+  privateKeyPath: /home/ubuntu/cert/getepay-payout.key
+
+file:
+  uploaddir: "c:/"
+
+awsCredential:
+  s3FileUrl: https://s3.ap-south-1.amazonaws.com
+  s3AccessKey: AKIAZWW7YF4VVGPKQDFR
+  s3SecretAccessKey: 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
+  s3TxnStsBucketName: vpay-app-files
